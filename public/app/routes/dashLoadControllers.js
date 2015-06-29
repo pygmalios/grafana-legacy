@@ -25,6 +25,10 @@ function (angular) {
       $scope.initDashboard(result, $scope);
     });
 
+    $scope.showExtraPanel = function(panel) {
+      return $scope.dashboard && $scope.dashboard.tags.indexOf(panel) >= 0;
+    };
+
   });
 
   module.controller('DashFromImportCtrl', function($scope, $location, alertSrv) {
